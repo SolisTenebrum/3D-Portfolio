@@ -1,23 +1,17 @@
-import React, { lazy, Suspense } from "react";
-import { SectionWrapper } from "../hoc";
-import { technologies } from "../constants";
-import CanvasLoader from "./Loader";
+import { BallCanvas } from "./canvas"
+import { SectionWrapper } from "../hoc"
+import { technologies } from "../constants"
 
-const BallCanvas = lazy(() => import("./canvas/Ball"));
 const Tech = () => {
   return (
-    <Suspense fallback={<div />}>
-      <div className="flex flex-row flex-wrap justify-center gap-10">
-        {technologies.map((technology) => {
-          return (
-            <div className="w-28 h-28" key={technology.name}>
-              <BallCanvas icon={technology.icon} />
-            </div>
-          );
-        })}
-      </div>
-    </Suspense>
-  );
-};
+    <div className="flex flex-row flex-wrap justify-center gap-10">
+      {technologies.map((technology) => {
+        return <div className="w-28 h-28" key={technology.name}>
+          <BallCanvas icon={technology.icon}/>
+        </div>
+      })}
+    </div>
+  )
+}
 
-export default SectionWrapper(Tech, "");
+export default SectionWrapper(Tech, '')
