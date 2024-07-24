@@ -14,8 +14,8 @@ import React from "react";
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
-      contentStyle={{ background: "#1d1836", color: "#fff" }}
-      contentArrowStyle={{ borderRight: "10px solid  #1d1836" }}
+      contentStyle={{ background: "#101c30", color: "#fff" }}
+      contentArrowStyle={{ borderRight: "10px solid #101c30" }}
       date={experience.date}
       iconStyle={{ background: experience.iconBg }}
       icon={

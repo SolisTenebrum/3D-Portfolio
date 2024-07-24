@@ -107,7 +107,7 @@ import {
       title: "React.js Developer",
       company_name: "Starbucks",
       icon: starbucks,
-      iconBg: "#383E56",
+      iconBg: "#101c30",
       date: "March 2020 - April 2021",
       points: [
         "Developing and maintaining web applications using React.js and other related technologies.",
@@ -133,7 +133,7 @@ import {
       title: "Web Developer",
       company_name: "Shopify",
       icon: shopify,
-      iconBg: "#383E56",
+      iconBg: "#101c30",
       date: "Jan 2022 - Jan 2023",
       points: [
         "Developing and maintaining web applications using React.js and other related technologies.",
