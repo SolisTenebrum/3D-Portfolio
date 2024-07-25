@@ -54,11 +54,11 @@
 }
 
 .blue-gradient {
-  background: #2168ff;
-  background: linear-gradient(-90deg, #2168ff 0%, rgba(51, 53, 80, 0) 100%);
+  background: #568cff;
+  background: linear-gradient(-90deg, #568cff 0%, rgba(51, 53, 80, 0) 100%);
   background: -webkit-linear-gradient(
     -90deg,
-    #2168ff 0%,
+    #568cff 0%,
     rgba(51, 53, 80, 0) 100%
   );
 }
