@@ -126,7 +126,7 @@ import {
           color: "green-text-gradient",
         },
         {
-          name: "tailwindCSS",
+          name: "tailwind",
           color: "blue-text-gradient",
         },
       ],
