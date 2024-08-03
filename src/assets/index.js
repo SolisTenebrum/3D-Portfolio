@@ -29,6 +29,9 @@ import tesla from "./company/tesla.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import vrnas from './vrnas.png'
+import workInProgress from './work-in-progress.png';
+import openProject from './open-in-new-tab.svg'
 
 export {
   logo,
@@ -59,4 +62,7 @@ export {
   carrent,
   jobit,
   tripguide,
+  vrnas,
+  workInProgress,
+  openProject
 };

@@ -23,6 +23,8 @@ import {
     jobit,
     tripguide,
     threejs,
+    vrnas,
+    workInProgress
   } from "../assets";
   
   export const navLinks = [
@@ -186,66 +188,69 @@ import {
   
   const projects = [
     {
-      name: "Car Rent",
+      name: "VRNas",
       description:
-        "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+        "Platform providing VR services, including virtual reality experiences, augmented reality, and virtual worlds.",
       tags: [
         {
           name: "react",
           color: "blue-text-gradient",
         },
         {
-          name: "mongodb",
+          name: "css-modules",
           color: "green-text-gradient",
         },
         {
-          name: "tailwind",
+          name: "my patience",
           color: "pink-text-gradient",
         },
       ],
-      image: carrent,
-      source_code_link: "https://github.com/",
+      image: vrnas,
+      project_link: 'https://solistenebrum-vrnas.vercel.app/',
+      source_code_link: "https://github.com/SolisTenebrum/VRNas",
     },
     {
-      name: "Job IT",
+      name: "Work in progress",
       description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+        "Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       tags: [
         {
-          name: "react",
+          name: "wip",
           color: "blue-text-gradient",
         },
         {
-          name: "restapi",
+          name: "wip",
           color: "green-text-gradient",
         },
         {
-          name: "scss",
+          name: "wip",
           color: "pink-text-gradient",
         },
       ],
-      image: jobit,
+      image: workInProgress,
+      project_link: '',
       source_code_link: "https://github.com/",
     },
     {
-      name: "Trip Guide",
+      name: "Work in progress",
       description:
-        "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
+        "Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       tags: [
         {
-          name: "nextjs",
+          name: "wip",
           color: "blue-text-gradient",
         },
         {
-          name: "supabase",
+          name: "wip",
           color: "green-text-gradient",
         },
         {
-          name: "css",
+          name: "wip",
           color: "pink-text-gradient",
         },
       ],
-      image: tripguide,
+      image: workInProgress,
+      project_link: '',
       source_code_link: "https://github.com/",
     },
   ];
