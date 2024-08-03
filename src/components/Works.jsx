@@ -1,4 +1,4 @@
-import { Tilt } from "react-tilt";
+import { Tilt } from "@jdion/tilt-react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { github, openProject } from "../assets";
@@ -15,7 +15,7 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
-  project_link
+  project_link,
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
@@ -24,6 +24,8 @@ const ProjectCard = ({
           max: 45,
           scale: 1,
           speed: 450,
+          transition: true,
+          easing: "cubic-bezier(.03,.98,.52,.99)",
         }}
         className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
       >
@@ -65,9 +67,13 @@ const ProjectCard = ({
           <p className="mt-2 text-secondary text-[14px]">{description}</p>
         </div>
         <div className="mt-4 flex flex-wrap gap-2">
-              {tags.map((tag) => {
-                return <p key={tag.name} className={`text-[14px] ${tag.color} `}>#{tag.name}</p>
-              })}
+          {tags.map((tag) => {
+            return (
+              <p key={tag.name} className={`text-[14px] ${tag.color} `}>
+                #{tag.name}
+              </p>
+            );
+          })}
         </div>
       </Tilt>
     </motion.div>
