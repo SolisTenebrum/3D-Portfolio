@@ -49,7 +49,7 @@ const ProjectCard = ({
               />
             </div>}
             
-            <div
+            {source_code_link && <div
               onClick={() => {
                 window.open(source_code_link, "blank");
               }}
@@ -60,7 +60,8 @@ const ProjectCard = ({
                 alt="github"
                 className="w-1/2 h-1/2 object-contain"
               />
-            </div>
+            </div>}
+            
           </div>
         </div>
         <div className="mt-5 ">

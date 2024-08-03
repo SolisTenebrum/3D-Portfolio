@@ -175,7 +175,7 @@ import {
       ],
       image: workInProgress,
       project_link: '',
-      source_code_link: "https://github.com/",
+      source_code_link: "",
     },
     {
       name: "Work in progress",
@@ -197,7 +197,7 @@ import {
       ],
       image: workInProgress,
       project_link: '',
-      source_code_link: "https://github.com/",
+      source_code_link: "",
     },
   ];
   
