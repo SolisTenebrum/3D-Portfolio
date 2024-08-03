@@ -12,11 +12,24 @@ import { textVariant } from "../utils/motion";
 import React from "react";
 
 const ExperienceCard = ({ experience }) => {
+  const currentDate = new Date();
+
+  const months = [
+    "января", "февраля", "марта", "апреля", "мая", "июня",
+    "июля", "августа", "сентября", "октября", "ноября", "декабря"
+  ];
+
+  const day = currentDate.getDate();
+  const month = currentDate.getMonth();
+  const year = currentDate.getFullYear();
+
+  const today = `${day} ${months[month]} ${year} год`
+
   return (
     <VerticalTimelineElement
       contentStyle={{ background: "#101c30", color: "#fff" }}
       contentArrowStyle={{ borderRight: "10px solid #101c30" }}
-      date={experience.date}
+      date={today}
       iconStyle={{ background: experience.iconBg }}
       icon={
         <div className="flex justify-center items-center w-full h-full">

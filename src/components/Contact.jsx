@@ -27,10 +27,6 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    // -NvWtpiiQ1HEQFsNc
-    // template_qkjxknl
-    // service_pzyy19k
-
     emailjs.send(
       'service_pzyy19k', 
       'template_qkjxknl',
@@ -62,7 +58,7 @@ const Contact = () => {
     <div className="xl:mt12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-200 p-8 rounded-2xl"
+        className="flex-[0.75] bg-black-200 p-8 rounded-2xl select-none"
       >
         <p className={styles.heroSubText}>Get in touch</p>
         <h3 className={styles.heroHeadText}>Contact</h3>
