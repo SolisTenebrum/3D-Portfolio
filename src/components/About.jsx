@@ -8,7 +8,7 @@ import { SectionWrapper } from "../hoc";
 const ServiceCard = ({ index, title, icon }, service) => {
   return (
     <Tilt
-      className="xs:w-[250px] w-full"
+      className="xs:w-[250px] w-full select-none"
       options={{
         max: 45,
         scale: 1,

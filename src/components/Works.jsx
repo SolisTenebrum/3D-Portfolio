@@ -27,7 +27,7 @@ const ProjectCard = ({
           transition: true,
           easing: "cubic-bezier(.03,.98,.52,.99)",
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full select-none"
       >
         <div className="relative w-full h-[230px]">
           <img
@@ -36,32 +36,35 @@ const ProjectCard = ({
             className="w-full h-full object-cover rounded-2xl"
           />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-          {project_link && <div
-              onClick={() => {
-                window.open(project_link, "blank");
-              }}
-              className="bg-tertiary w-10 h-10 rounded-full flex justify-center items-center cursor-pointer mr-2"
-            >
-              <img
-                src={openProject}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain"
-              />
-            </div>}
-            
-            {source_code_link && <div
-              onClick={() => {
-                window.open(source_code_link, "blank");
-              }}
-              className="bg-tertiary w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
-            >
-              <img
-                src={github}
-                alt="github"
-                className="w-1/2 h-1/2 object-contain"
-              />
-            </div>}
-            
+            {project_link && (
+              <div
+                onClick={() => {
+                  window.open(project_link, "blank");
+                }}
+                className="bg-tertiary w-10 h-10 rounded-full flex justify-center items-center cursor-pointer mr-2"
+              >
+                <img
+                  src={openProject}
+                  alt="github"
+                  className="w-1/2 h-1/2 object-contain"
+                />
+              </div>
+            )}
+
+            {source_code_link && (
+              <div
+                onClick={() => {
+                  window.open(source_code_link, "blank");
+                }}
+                className="bg-tertiary w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+              >
+                <img
+                  src={github}
+                  alt="github"
+                  className="w-1/2 h-1/2 object-contain"
+                />
+              </div>
+            )}
           </div>
         </div>
         <div className="mt-5 ">
