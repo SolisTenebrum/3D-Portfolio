@@ -129,7 +129,11 @@ const projects = [
       },
       {
         name: "vite",
-        color: "beige-text-gradient",
+        color: "yellow-text-gradient",
+      },
+      {
+        name: "framer-motion",
+        color: "pink",
       },
     ],
     image: portfolioImage,
