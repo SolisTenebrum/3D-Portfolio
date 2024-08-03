@@ -36,7 +36,7 @@ const ProjectCard = ({
             className="w-full h-full object-cover rounded-2xl"
           />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div
+          {project_link && <div
               onClick={() => {
                 window.open(project_link, "blank");
               }}
@@ -47,7 +47,8 @@ const ProjectCard = ({
                 alt="github"
                 className="w-1/2 h-1/2 object-contain"
               />
-            </div>
+            </div>}
+            
             <div
               onClick={() => {
                 window.open(source_code_link, "blank");

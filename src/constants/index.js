@@ -1,6 +1,5 @@
 import {
     mobile,
-    creator,
     web,
     javascript,
     typescript,
@@ -131,7 +130,7 @@ import {
         },
       ],
       image: portfolioImage,
-      project_link: 'https://solistenebrum-3d-portfolio.vercel.app/',
+      project_link: '',
       source_code_link: "https://github.com/SolisTenebrum/3D-Portfolio",
     },
     {
