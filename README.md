@@ -1,7 +1,5 @@
 # 3D Portfolio
 
-## A 3D portfolio.
-
 ![3d-portfolio-preview](./src/assets/3d-portfolio-preview.png)
 
 ## Tech Stack
