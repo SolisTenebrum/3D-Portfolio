@@ -54,7 +54,7 @@ const Navbar = () => {
         </div>
         <div
           className={`${
-            !toggle ? "opacity-0" : "opacity-100"
+            !toggle ? "opacity-0 invisible" : "opacity-100 visible"
           } p-6 menu-gradient bg-gradient-to-r from indigo-500 absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl transition-all duration-300`}
         >
           <ul className="list-none flex justify-end items-start flex-col gap-4">
