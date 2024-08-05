@@ -184,28 +184,6 @@ const projects = [
     project_link: "",
     source_code_link: "",
   },
-  {
-    name: "Work in progress",
-    description:
-      "Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    tags: [
-      {
-        name: "wip1",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "wip2",
-        color: "green-text-gradient",
-      },
-      {
-        name: "wip3",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: workInProgress,
-    project_link: "",
-    source_code_link: "",
-  },
 ];
 
 export { services, technologies, experiences, projects };
