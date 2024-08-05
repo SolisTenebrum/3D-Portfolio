@@ -22,7 +22,7 @@ import vrnas from './vrnas.png'
 import workInProgress from './work-in-progress.png';
 import openProject from './open-in-new-tab.svg'
 import questionMark from './question-mark.svg'
-import portfolioImage from './3d-portfolio.png'
+import portfolioImage from './3d-portfolio-preview.png'
 
 export {
   logo,
