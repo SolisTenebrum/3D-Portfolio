@@ -4,7 +4,7 @@ import { technologies } from "../constants";
 
 const Tech = () => {
   return (
-    <div className="flex flex-row flex-wrap justify-center gap-10">
+    <div className="flex flex-row flex-wrap justify-center align-center gap-10 max-w-[900px] self-center">
       {technologies.map((technology) => {
         return (
           <div className="w-28 h-28" key={technology.name}>
@@ -16,4 +16,4 @@ const Tech = () => {
   );
 };
 
-export default SectionWrapper(Tech, "");
+export default SectionWrapper(Tech, "tech");
