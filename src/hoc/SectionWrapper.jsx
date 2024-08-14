@@ -6,7 +6,6 @@ const SectionWrapper = (Component, idName) =>
   
 
   function HOC() {
-    console.log(idName)
     return (
       <motion.section
         variants={staggerContainer()}
