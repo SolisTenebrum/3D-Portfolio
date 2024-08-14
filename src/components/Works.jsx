@@ -33,7 +33,9 @@ const ProjectCard = ({
           <img
             src={image}
             alt={name}
-            className={`w-full h-full object-cover ${name === "Work in progress" ? "" : "object-top" } rounded-2xl`}
+            className={`w-full h-full object-cover ${
+              name === "Work in progress" ? "" : "object-top"
+            } rounded-2xl`}
           />
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
             {project_link && (
@@ -98,14 +100,11 @@ const Works = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          Sed tincidunt egestas facilisis. Pellentesque libero nisi, vulputate a
-          aliquam id, molestie vitae orci. Nunc bibendum, ligula vel dapibus
-          efficitur, diam elit suscipit neque, malesuada ullamcorper turpis leo
-          vel erat. Ut eget neque commodo dolor consequat maximus. Proin aliquam
-          purus a blandit iaculis. Donec scelerisque interdum nunc. Vivamus
-          blandit eros sit amet ex pulvinar fringilla. Fusce vestibulum non
-          ligula ut interdum. Proin tincidunt sem eu dolor tincidunt
-          pellentesque. Aliquam ultricies lectus quis erat condimentum tempor.
+          The following projects showcase my skills and experience through
+          real-world examples of my work. Each project is briefly described,
+          with links to code repositories and live demos included. These
+          projects highlight my ability to tackle complex problems, work with
+          various technologies, and deliver functional solutions.
         </motion.p>
       </div>
 

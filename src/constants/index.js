@@ -168,15 +168,15 @@ const projects = [
       "Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     tags: [
       {
-        name: "wip1",
+        name: "Lorem",
         color: "blue-text-gradient",
       },
       {
-        name: "wip2",
+        name: "Ipsum",
         color: "green-text-gradient",
       },
       {
-        name: "wip3",
+        name: "Dolor",
         color: "pink-text-gradient",
       },
     ],

@@ -43,15 +43,13 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi et ipsum
-        diam. Praesent molestie congue justo, non vulputate mi. Orci varius
-        natoque penatibus et magnis dis parturient montes, nascetur ridiculus
-        mus. Vestibulum pharetra ornare quam vitae tincidunt. Suspendisse tempor
-        ullamcorper leo, ut mollis quam consequat ac. Nunc commodo ut eros at
-        egestas. Pellentesque facilisis felis eu tortor ultrices aliquet. Donec
-        et auctor urna. Vivamus placerat ultrices nunc ut ultricies. Ut
-        imperdiet, erat non viverra rutrum, nibh quam finibus erat, ut efficitur
-        massa ex quis magna.
+        Hi, my name is Pavel, and I'm a front-end developer with experience in
+        JavaScript and some experience with TypeScript. My main tool is React,
+        and I'm constantly improving my skills to build high-quality, modern web
+        applications. I'm a fast learner and committed to becoming a
+        professional in front-end development. My portfolio showcases projects
+        that reflect my abilities and approach to development. I’d be excited to
+        join your project and contribute to its success!
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">
