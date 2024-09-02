@@ -157,6 +157,10 @@ const projects = [
         name: "typescript",
         color: "pink-text-gradient",
       },
+      {
+        name: "framer-motion",
+        color: "pink",
+      },
     ],
     image: vrnas,
     project_link: "https://solistenebrum-vrnas.vercel.app/",

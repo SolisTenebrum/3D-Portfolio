@@ -11,3 +11,4 @@
 - Email JS
 - Vite
 - Tailwind CSS
+- Framer-motion
