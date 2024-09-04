@@ -27,36 +27,41 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
 
-    emailjs
-      .send(
-        "service_pzyy19k",
-        "template_qkjxknl",
-        {
-          from_name: form.name,
-          to_name: "SolisTenebrum",
-          from_email: form.email,
-          to_email: "solistenebrum@icloud.com",
-          message: form.message,
-        },
-        "-NvWtpiiQ1HEQFsNc"
-      )
-      .then(() => {
-        setLoading(false);
-        alert("Thank you. I will get back to you as soon as possible.");
-
-        setForm(
+    if (form.email === "" || form.name === "" || form.message === "") {
+      setLoading(false);
+      alert("Please fill all the fields");
+    } else {
+      emailjs
+        .send(
+          "service_pzyy19k",
+          "template_qkjxknl",
           {
-            name: "",
-            email: "",
-            message: "",
+            from_name: form.name,
+            to_name: "SolisTenebrum",
+            from_email: form.email,
+            to_email: "solistenebrum@icloud.com",
+            message: form.message,
           },
-          (error) => {
-            setLoading(false);
-            console.log(error);
-            alert("Something went wrong");
-          }
-        );
-      });
+          "-NvWtpiiQ1HEQFsNc"
+        )
+        .then(() => {
+          setLoading(false);
+          alert("Thank you. I will get back to you as soon as possible.");
+
+          setForm(
+            {
+              name: "",
+              email: "",
+              message: "",
+            },
+            (error) => {
+              setLoading(false);
+              console.log(error);
+              alert("Something went wrong");
+            }
+          );
+        });
+    }
   };
 
   return (
