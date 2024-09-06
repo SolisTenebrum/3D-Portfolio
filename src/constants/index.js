@@ -143,7 +143,7 @@ const projects = [
   {
     name: "VRNas",
     description:
-      "Platform providing VR services, including virtual reality experiences, augmented reality, and virtual worlds.",
+      "Platform providing VR services.",
     tags: [
       {
         name: "react",
@@ -169,7 +169,7 @@ const projects = [
   {
     name: "Work in progress",
     description:
-      "Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Lorem impsum dolor sit amet, consectetur adipiscing.",
     tags: [
       {
         name: "Lorem",
