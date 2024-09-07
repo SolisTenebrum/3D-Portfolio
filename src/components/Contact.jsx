@@ -67,7 +67,10 @@ const Contact = () => {
   return (
     <div className="xl:mt12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
+         initial={{ x: -200, opacity: 0 }}
+         whileInView={{ x: 0, opacity: 1 }}
+         transition={{ duration: 0.7, easings: "ease", delay: 0.2 }}
+         viewport={{ once: true, amount: 0.5 }}
         className="flex-[0.75] bg-tertiary p-8 rounded-2xl select-none"
       >
         <p className={styles.heroSubText}>Get in touch</p>
@@ -120,7 +123,10 @@ const Contact = () => {
       </motion.div>
 
       <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
+        initial={{ x: 200, opacity: 0 }}
+        whileInView={{ x: 0, opacity: 1 }}
+        transition={{ duration: 0.7, easings: "ease", delay: 0.2 }}
+        viewport={{ once: true, amount: 0.5 }}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
         <EarthCanvas />
