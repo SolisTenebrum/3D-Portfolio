@@ -2,11 +2,11 @@ import { Tilt } from "@jdion/tilt-react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { services } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
 import isMobileDevice from "../utils/isMobileDevice";
+import { textSlideUp, cardShowUp } from "../utils/motion";
 
-const ServiceCard = ({ index, title, icon }, service) => {
+const ServiceCard = ({ index, title, icon }) => {
   return (
     <Tilt
       className="xs:w-[250px] w-full select-none"
@@ -19,9 +19,9 @@ const ServiceCard = ({ index, title, icon }, service) => {
       }}
     >
       <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.3, delay: index * 0.3 }}
+        initial="hidden"
+        whileInView="show"
+        variants={cardShowUp(0.5, 0.3, index * 0.3)}
         viewport={{ once: true, amount: 0.4 }}
         className="w-full card-gradient p-[1px] rounded-[20px] shadow-card"
       >
@@ -39,12 +39,20 @@ const ServiceCard = ({ index, title, icon }, service) => {
 const About = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        variants={textSlideUp(100, 0.4, 0)}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview</h2>
       </motion.div>
       <motion.p
-        variants={fadeIn("", "", 0.1, 1)}
+        initial="hidden"
+        whileInView="show"
+        variants={textSlideUp(100, 0.4, 0.3)}
+        viewport={{ once: true, amount: 0.3 }}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
         Hi, my name is Pavel, and I'm a front-end developer with experience in

@@ -4,8 +4,8 @@ import { styles } from "../styles";
 import { github, openProject } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
-import { fadeIn, textVariant } from "../utils/motion";
 import isMobileDevice from "../utils/isMobileDevice";
+import { textSlideUp, cardShowUp } from "../utils/motion";
 
 import React from "react";
 
@@ -20,9 +20,9 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.5 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.3, delay: index * 0.3 }}
+      initial="hidden"
+      whileInView="show"
+      variants={cardShowUp(0.5, 0.3, index * 0.3)}
       viewport={{ once: true, amount: 0.4 }}
     >
       <Tilt
@@ -96,14 +96,21 @@ const ProjectCard = ({
 const Works = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        variants={textSlideUp(100, 0.4, 0)}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <p className={styles.sectionSubText}>My work</p>
         <h2 className={styles.sectionHeadText}>Projects</h2>
       </motion.div>
-
       <div className="w-full flex">
         <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
+          initial="hidden"
+          whileInView="show"
+          variants={textSlideUp(100, 0.4, 0.3)}
+          viewport={{ once: true, amount: 0.3 }}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
           The following projects showcase my skills and experience through

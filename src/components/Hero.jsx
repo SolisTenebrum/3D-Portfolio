@@ -12,14 +12,14 @@ const Hero = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5, ease: "easeIn" }}
             viewport={{ once: true }}
             className="w-5 h-5 rounded-full bg-[#568cff]"
           />
           <motion.div
             initial={{ opacity: 0, height: 0 }}
             whileInView={{ opacity: 1, height: "20rem" }}
-            transition={{ duration: 1, delay: 0.5 }}
+            transition={{ duration: 1, delay: 0.5, ease: "easeIn" }}
             viewport={{ once: true }}
             className="w-1 sm:h-80 h-40 blue-gradient"
           />
@@ -27,7 +27,7 @@ const Hero = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, delay: 0.5, ease: "easeIn" }}
           viewport={{ once: true }}
           className="z-10"
         >

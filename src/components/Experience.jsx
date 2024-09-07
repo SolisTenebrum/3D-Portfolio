@@ -7,9 +7,8 @@ import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../styles";
 import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
-import { textVariant } from "../utils/motion";
-
 import React from "react";
+import { textSlideUp } from "../utils/motion";
 
 const ExperienceCard = ({ experience }) => {
   const currentDate = new Date();
@@ -79,7 +78,12 @@ const ExperienceCard = ({ experience }) => {
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div
+        initial="hidden"
+        whileInView="show"
+        variants={textSlideUp(100, 0.4, 0)}
+        viewport={{ once: true, amount: 0.3 }}
+      >
         <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experienece</h2>
       </motion.div>

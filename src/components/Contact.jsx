@@ -68,8 +68,8 @@ const Contact = () => {
       <motion.div
         initial={{ y: 200, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.7, easings: "easeOut" }}
-        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.5, ease: "easeIn" }}
+        viewport={{ once: true, amount: 0.1 }}
         className="flex-[0.75] bg-tertiary p-8 rounded-2xl select-none"
       >
         <p className={styles.heroSubText}>Get in touch</p>
@@ -124,7 +124,7 @@ const Contact = () => {
       <motion.div
         initial={{ x: 200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 1, easings: "ease" }}
+        transition={{ duration: 1, ease: "linear" }}
         viewport={{ once: true, amount: 0.3 }}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
