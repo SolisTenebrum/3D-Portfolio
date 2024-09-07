@@ -13,12 +13,12 @@
   color-scheme: dark;
 }
 
-canvas {
+/* canvas {
   touch-action: auto !important;
-}
+} */
 
 .scrollCanvasAuto {
-  touch-action: auto !important;
+  touch-action: pan-y !important;
 }
 
 html {
