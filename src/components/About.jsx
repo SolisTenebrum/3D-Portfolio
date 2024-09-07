@@ -4,13 +4,14 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { SectionWrapper } from "../hoc";
+import isMobileDevice from "../utils/isMobileDevice";
 
 const ServiceCard = ({ index, title, icon }, service) => {
   return (
     <Tilt
       className="xs:w-[250px] w-full select-none"
       options={{
-        max: 45,
+        max: isMobileDevice() === "mobile" ? 0 : 45,
         scale: 1,
         speed: 450,
         transition: true,
@@ -18,7 +19,10 @@ const ServiceCard = ({ index, title, icon }, service) => {
       }}
     >
       <motion.div
-        variants={fadeIn("right", "spring", index * 0.4, 0.75)}
+        initial={{ opacity: 0, scale: 0.5 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.3, delay: index * 0.3 }}
+        viewport={{ once: true, amount: 0.4 }}
         className="w-full card-gradient p-[1px] rounded-[20px] shadow-card"
       >
         <div className="bg-tertiary rounded-[20px] py-5 px-20 min-h-[280px] flex justify-evenly items-center flex-col">

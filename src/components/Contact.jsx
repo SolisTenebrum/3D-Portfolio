@@ -4,7 +4,6 @@ import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
-import { slideIn } from "../utils/motion";
 
 const Contact = () => {
   const formRef = useRef();
@@ -67,10 +66,10 @@ const Contact = () => {
   return (
     <div className="xl:mt12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
-         initial={{ x: -200, opacity: 0 }}
-         whileInView={{ x: 0, opacity: 1 }}
-         transition={{ duration: 0.7, easings: "ease", delay: 0.2 }}
-         viewport={{ once: true, amount: 0.5 }}
+        initial={{ y: 200, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.7, easings: "easeOut" }}
+        viewport={{ once: true, amount: 0.3 }}
         className="flex-[0.75] bg-tertiary p-8 rounded-2xl select-none"
       >
         <p className={styles.heroSubText}>Get in touch</p>
@@ -125,8 +124,8 @@ const Contact = () => {
       <motion.div
         initial={{ x: 200, opacity: 0 }}
         whileInView={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.7, easings: "ease", delay: 0.2 }}
-        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 1, easings: "ease" }}
+        viewport={{ once: true, amount: 0.3 }}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
         <EarthCanvas />

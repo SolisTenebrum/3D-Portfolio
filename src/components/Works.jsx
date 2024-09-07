@@ -5,6 +5,7 @@ import { github, openProject } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import isMobileDevice from "../utils/isMobileDevice";
 
 import React from "react";
 
@@ -18,10 +19,15 @@ const ProjectCard = ({
   project_link,
 }) => {
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.5 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.3, delay: index * 0.3 }}
+      viewport={{ once: true, amount: 0.4 }}
+    >
       <Tilt
         options={{
-          max: 45,
+          max: isMobileDevice() === "mobile" ? 0 : 45,
           scale: 1,
           speed: 450,
           transition: true,
