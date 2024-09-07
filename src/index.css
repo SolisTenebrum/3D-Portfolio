@@ -13,6 +13,14 @@
   color-scheme: dark;
 }
 
+canvas {
+  touch-action: auto !important;
+}
+
+.scrollCanvasAuto {
+  touch-action: auto !important;
+}
+
 html {
   scrollbar-width: thin;
   scrollbar-color: rgb(86, 140, 255) transparent;
@@ -73,7 +81,6 @@ html {
     rgba(0, 17, 255, 0) 100%
   );
 }
-
 
 .card-gradient {
   background: "#00cea8";
