@@ -74,10 +74,11 @@ html {
   );
 }
 
+
 .card-gradient {
   background: "#00cea8";
-  background: linear-gradient(90.13deg, #0021b4 1.9%, #d400ff 97.5%);
-  background: -webkit-linear-gradient(-90.13deg, #0021b4 1.9%, #d400ff 97.5%);
+  background: linear-gradient(90.13deg, #0021b4 1.9%, #568cff 97.5%);
+  background: -webkit-linear-gradient(-90.13deg, #0021b4 1.9%, #568cff 97.5%);
 }
 
 .orange-text-gradient {
