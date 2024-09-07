@@ -13,6 +13,12 @@
   color-scheme: dark;
 }
 
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(86, 140, 255) transparent;
+  background-color: rgb(0, 11, 25);
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
