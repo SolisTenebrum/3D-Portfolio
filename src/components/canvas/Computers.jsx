@@ -1,10 +1,25 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import React, { Suspense, useEffect, useState, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader";
 
-const Computers = ({ isMobile }) => {
+const Computers = ({ isMobile, orbitRef, returnToInitialPosition }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
+
+  useFrame(() => {
+    if (orbitRef.current && returnToInitialPosition) {
+      const currentRotationY = orbitRef.current.getAzimuthalAngle();
+      const targetRotationY = 1.4;
+      const delta = 0.05;
+
+      if (Math.abs(currentRotationY - targetRotationY) > 0.001) {
+        const newRotationY =
+          currentRotationY + (targetRotationY - currentRotationY) * delta;
+        orbitRef.current.setAzimuthalAngle(newRotationY);
+        orbitRef.current.update();
+      }
+    }
+  });
 
   return (
     <mesh>
@@ -22,7 +37,7 @@ const Computers = ({ isMobile }) => {
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}
         position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        rotation={[0.005, -0.2, -0.1]}
       />
     </mesh>
   );
@@ -30,10 +45,12 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [returnToInitialPosition, setReturnToInitialPosition] = useState(false);
+  const orbitRef = useRef();
+  const timeoutRef = useRef(null);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(max-width: 500px)");
-
     setIsMobile(mediaQuery.matches);
 
     const handleMediaQueryChange = (event) => {
@@ -41,11 +58,23 @@ const ComputersCanvas = () => {
     };
 
     mediaQuery.addEventListener("change", handleMediaQueryChange);
-
     return () => {
       mediaQuery.removeEventListener("change", handleMediaQueryChange);
     };
   }, []);
+
+  const handleInteractionStart = () => {
+    setReturnToInitialPosition(false);
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
+
+  const handleInteractionEnd = () => {
+    timeoutRef.current = setTimeout(() => {
+      setReturnToInitialPosition(true);
+    }, 1000);
+  };
 
   return (
     <Canvas
@@ -58,12 +87,21 @@ const ComputersCanvas = () => {
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
+          ref={orbitRef}
           enableZoom={false}
           enablePan={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
+          enableDamping={true}
+          dampingFactor={0.1}
+          onStart={handleInteractionStart}
+          onEnd={handleInteractionEnd}
         />
-        <Computers isMobile={isMobile} />
+        <Computers
+          isMobile={isMobile}
+          orbitRef={orbitRef}
+          returnToInitialPosition={returnToInitialPosition}
+        />
       </Suspense>
 
       <Preload all />
