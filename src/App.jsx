@@ -8,6 +8,7 @@ import {
   Works,
   StarsCanvas,
 } from "./components";
+import isMobileDevice from "./utils/isMobileDevice";
 
 const App = () => {
   return (
@@ -18,7 +19,7 @@ const App = () => {
       </div>
       <About />
       <Experience />
-      {/* <Tech /> */}
+      {isMobileDevice() === "desktop" && <Tech />}
       <Works />
       <div className="relative z-0">
         <Contact />
