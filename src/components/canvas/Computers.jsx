@@ -9,7 +9,7 @@ const Computers = ({ isMobile, orbitRef, returnToInitialPosition }) => {
   useFrame(() => {
     if (orbitRef.current && returnToInitialPosition) {
       const currentRotationY = orbitRef.current.getAzimuthalAngle();
-      const targetRotationY = 1.4;
+      const targetRotationY = 1.35;
       const delta = 0.05;
 
       if (Math.abs(currentRotationY - targetRotationY) > 0.001) {
@@ -37,7 +37,7 @@ const Computers = ({ isMobile, orbitRef, returnToInitialPosition }) => {
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}
         position={isMobile ? [0, -3, -2.2] : [0, -3.25, -1.5]}
-        rotation={[0.005, -0.2, -0.1]}
+        rotation={[-0.008, -0.2, -0.1]}
       />
     </mesh>
   );
