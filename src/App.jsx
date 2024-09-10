@@ -8,7 +8,7 @@ import {
   Works,
   StarsCanvas,
 } from "./components";
-import isMobileDevice from "./utils/isMobileDevice";
+import { detectOs } from "./utils/detectOs";
 
 const App = () => {
   return (
@@ -19,7 +19,7 @@ const App = () => {
       </div>
       <About />
       <Experience />
-      {isMobileDevice() === "desktop" && <Tech />}
+      {detectOs() !== "android" && <Tech />}
       <Works />
       <div className="relative z-0">
         <Contact />
