@@ -32,7 +32,7 @@ const Hero = () => {
           className="z-10"
         >
           <h1 className={`${styles.heroHeadText}`}>
-            Hi, I'm <span className="text-[#568cff]">SolisTenebrum</span>
+            Hi, I'm <span className="text-[#568cff]">Pavel</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             Frontend Developer
