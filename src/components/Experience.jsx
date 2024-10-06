@@ -13,26 +13,17 @@ import { textSlideUp } from "../utils/motion";
 const ExperienceCard = ({ experience }) => {
   const currentDate = new Date();
 
-  const months = [
-    "января",
-    "февраля",
-    "марта",
-    "апреля",
-    "мая",
-    "июня",
-    "июля",
-    "августа",
-    "сентября",
-    "октября",
-    "ноября",
-    "декабря",
-  ];
+  const today = currentDate.toLocaleString('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
 
-  const day = currentDate.getDate();
-  const month = currentDate.getMonth();
-  const year = currentDate.getFullYear();
-
-  const today = `${day} ${months[month]} ${year} год`;
+  const todayRu = currentDate.toLocaleString('ru-RU', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
 
   return (
     <VerticalTimelineElement
