@@ -15,6 +15,8 @@ const Navbar = () => {
   const [toggleLng, setToggleLng] = useState(false);
   const lngButtonRef = useRef(null);
   const lngMenuRef = useRef(null);
+  const lngButtonRefMobile = useRef(null);
+  const lngMenuRefMobile = useRef(null);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -50,6 +52,27 @@ const Navbar = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handeScroll);
+
+    const handleClickOutside = (event) => {
+      if (
+        lngMenuRef.current &&
+        !lngMenuRef.current.contains(event.target) &&
+        lngButtonRef.current &&
+        !lngButtonRef.current.contains(event.target) &&
+        lngMenuRefMobile.current &&
+        !lngMenuRefMobile.current.contains(event.target) &&
+        lngButtonRefMobile.current &&
+        !lngButtonRefMobile.current.contains(event.target)
+      ) {
+        setToggleLng(false); 
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   const navLinks = [
@@ -156,11 +179,13 @@ const Navbar = () => {
             onClick={() => {
               setToggleLng(!toggleLng);
             }}
+            ref={lngButtonRefMobile}
           />
           <div
             className={`${
               !toggleLng ? "opacity-0 invisible" : "opacity-100 visible"
             } p-6 menu-color absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl transition-all duration-300 md:hidden block`}
+            ref={lngMenuRefMobile}
           >
             <ul className="list-none flex justify-end items-start gap-5">
               <LanguageFlags />
