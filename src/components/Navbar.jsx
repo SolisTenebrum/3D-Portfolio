@@ -5,6 +5,7 @@ import { logo, menu, close } from "../assets";
 import { useTranslation } from "react-i18next";
 import ruFlag from "../assets/ruFlag.svg";
 import ukFlag from "../assets/ukFlag.svg";
+import languageIconWhite from "../assets/languageIconHovered.svg";
 
 const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -13,7 +14,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [toggleLng, setToggleLng] = useState(false);
   const lngButtonRef = useRef(null);
-  const menuRef = useRef(null);
+  const lngMenuRef = useRef(null);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -22,9 +23,9 @@ const Navbar = () => {
   };
 
   const getLngMenuPosition = () => {
-    if (lngButtonRef.current && menuRef.current) {
+    if (lngButtonRef.current && lngMenuRef.current) {
       const rect = lngButtonRef.current.getBoundingClientRect();
-      const menuRect = menuRef.current.getBoundingClientRect();
+      const menuRect = lngMenuRef.current.getBoundingClientRect();
       const buttonWidth = rect.width;
 
       return (
@@ -115,21 +116,19 @@ const Navbar = () => {
           </p>
         </Link>
         <div className="flex gap-10">
-          <p
-            className="justify-self-end cursor-pointer hover:text-white hidden md:block text-secondary text-[18px]"
+          <div
+            className="w-[24px] h-[24px] cursor-pointer hidden md:block languageIcon"
             onClick={() => {
               setToggleLng(!toggleLng);
             }}
             ref={lngButtonRef}
-          >
-            {t("header.languageButton")}
-          </p>
+          />
           <div
             className={`${
               !toggleLng ? "opacity-0 invisible" : "opacity-100 visible"
             } p-6 menu-color absolute top-20 mx-4 my-2 min-w-[140px] z-10 rounded-xl transition-all duration-300 hidden md:block`}
             style={{ right: `${getLngMenuPosition()}px` }}
-            ref={menuRef}
+            ref={lngMenuRef}
           >
             <ul className="list-none flex justify-end items-start gap-5">
               <LanguageFlags />
@@ -151,6 +150,22 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex gap-5 grow-0 md:hidden">
+          <img
+            src={languageIconWhite}
+            className="w-[28px] cursor-pointer md:hidden block"
+            onClick={() => {
+              setToggleLng(!toggleLng);
+            }}
+          />
+          <div
+            className={`${
+              !toggleLng ? "opacity-0 invisible" : "opacity-100 visible"
+            } p-6 menu-color absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl transition-all duration-300 md:hidden block`}
+          >
+            <ul className="list-none flex justify-end items-start gap-5">
+              <LanguageFlags />
+            </ul>
+          </div>
           <div className="md:hidden flex flex-1 justify-end items-center">
             <img
               src={toggle ? close : menu}
@@ -184,21 +199,6 @@ const Navbar = () => {
                   <a href={`#${link.id}`}>{link.title}</a>
                 </li>
               ))}
-              <p
-                className="justify-self-end cursor-pointer text-secondary md:hidden block text-[18px]"
-                onClick={() => setToggleLng(!toggleLng)}
-              >
-                {t("header.languageButton")}
-              </p>
-              <div
-                className={`${
-                  !toggleLng ? "opacity-0 invisible" : "opacity-100 visible"
-                }  p-6 menu-color absolute bottom-[-8px] right-[135px] mx-4 my-2 min-w-[140px] z-10 rounded-xl transition-all duration-300 md:hidden block`}
-              >
-                <ul className="list-none flex justify-end items-start gap-4">
-                  <LanguageFlags />
-                </ul>
-              </div>
             </ul>
           </div>
         </div>

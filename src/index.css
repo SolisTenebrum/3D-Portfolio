@@ -13,6 +13,14 @@
   color-scheme: dark;
 }
 
+.languageIcon {
+  background-image: url('./assets/languageIcon.svg');
+}
+
+.languageIcon:hover {
+  background-image: url('./assets/languageIconHovered.svg');
+}
+
 .scrollCanvas {
   touch-action: pan-y !important;
 }
