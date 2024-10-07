@@ -9,6 +9,8 @@ import {
   StarsCanvas,
 } from "./components";
 import { detectOs } from "./utils/detectOs";
+import i18n from "./transaltions/i18n";
+import { useEffect } from "react";
 
 const App = () => {
   return (

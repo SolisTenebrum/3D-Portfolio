@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { github, openProject } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
 import isMobileDevice from "../utils/isMobileDevice";
 import { textSlideUp, cardShowUp } from "../utils/motion";
+import { useTranslation } from "react-i18next";
 
 import React from "react";
 
@@ -94,6 +94,94 @@ const ProjectCard = ({
 };
 
 const Works = () => {
+  const { t } = useTranslation();
+
+  const projects = [
+    {
+      name: t("work.workCards.workCardOne"),
+      description: t("work.workCards.workCardOneDescription"),
+      tags: [
+        {
+          name: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "three.js",
+          color: "green-text-gradient",
+        },
+        {
+          name: "react three fiber",
+          color: "green-text-gradient",
+        },
+        {
+          name: "emailjs",
+          color: "pink-text-gradient",
+        },
+        {
+          name: "tailwind",
+          color: "orange-text-gradient",
+        },
+        {
+          name: "vite",
+          color: "yellow-text-gradient",
+        },
+        {
+          name: "framer-motion",
+          color: "pink",
+        },
+      ],
+      image: t("images.portfolio"),
+      project_link: "",
+      source_code_link: "https://github.com/SolisTenebrum/3D-Portfolio",
+    },
+    {
+      name: t("work.workCards.workCardTwo"),
+      description: t("work.workCards.workCardTwoDescription"),
+      tags: [
+        {
+          name: "react",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "css-modules",
+          color: "green-text-gradient",
+        },
+        {
+          name: "typescript",
+          color: "pink-text-gradient",
+        },
+        {
+          name: "framer-motion",
+          color: "pink",
+        },
+      ],
+      image: t("images.vrnas"),
+      project_link: "https://solistenebrum-vrnas.vercel.app/",
+      source_code_link: "https://github.com/SolisTenebrum/VRNas",
+    },
+    {
+      name: t("work.workCards.workCardInProgress"),
+      description: "Lorem impsum dolor sit amet, consectetur adipiscing.",
+      tags: [
+        {
+          name: "Lorem",
+          color: "blue-text-gradient",
+        },
+        {
+          name: "Ipsum",
+          color: "green-text-gradient",
+        },
+        {
+          name: "Dolor",
+          color: "pink-text-gradient",
+        },
+      ],
+      image: t("images.workInProgress"),
+      project_link: "",
+      source_code_link: "",
+    },
+  ];
+
   return (
     <>
       <motion.div
@@ -102,8 +190,8 @@ const Works = () => {
         variants={textSlideUp(100, 0.4, 0)}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <p className={styles.sectionSubText}>My work</p>
-        <h2 className={styles.sectionHeadText}>Projects</h2>
+        <p className={styles.sectionSubText}>{t("work.workTitle")}</p>
+        <h2 className={styles.sectionHeadText}>{t("work.workSubtitle")}</h2>
       </motion.div>
       <div className="w-full flex">
         <motion.p
@@ -113,11 +201,7 @@ const Works = () => {
           viewport={{ once: true, amount: 0.3 }}
           className="mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]"
         >
-          The following projects showcase my skills and experience through
-          real-world examples of my work. Each project is briefly described,
-          with links to code repositories and live demos included. These
-          projects highlight my ability to tackle complex problems, work with
-          various technologies, and deliver functional solutions.
+          {t("work.workDescription")}
         </motion.p>
       </div>
 

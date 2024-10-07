@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("./../vendor/fonts.css");
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Onest-Regular", sans-serif;
   scroll-behavior: smooth;
   color-scheme: dark;
 }
@@ -82,13 +82,8 @@
   );
 }
 
-.menu-gradient {
-  background: linear-gradient(-90deg, #092549 0%, rgba(255, 255, 255, 0) 100%);
-  background: -webkit-linear-gradient(
-    -90deg,
-    #092549 0%,
-    rgba(0, 17, 255, 0) 100%
-  );
+.menu-color {
+  background: #092549b0;
 }
 
 .card-gradient {

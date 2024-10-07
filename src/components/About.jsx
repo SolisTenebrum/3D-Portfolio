@@ -1,10 +1,11 @@
 import { Tilt } from "@jdion/tilt-react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import isMobileDevice from "../utils/isMobileDevice";
 import { textSlideUp, cardShowUp } from "../utils/motion";
+import { useTranslation } from "react-i18next";
+import { web, mobile } from "../assets";
 
 const ServiceCard = ({ index, title, icon }) => {
   return (
@@ -37,6 +38,20 @@ const ServiceCard = ({ index, title, icon }) => {
 };
 
 const About = () => {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      title: t('about.skillCardOne'),
+      icon: web,
+    },
+    {
+      title: t('about.skillCardTwo'),
+      icon: mobile,
+    },
+  ];
+
+
   return (
     <>
       <motion.div
@@ -45,8 +60,8 @@ const About = () => {
         variants={textSlideUp(100, 0.4, 0)}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <p className={styles.sectionSubText}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview</h2>
+        <p className={styles.sectionSubText}>{t("about.aboutTitle")}</p>
+        <h2 className={styles.sectionHeadText}>{t("about.aboutSubtitle")}</h2>
       </motion.div>
       <motion.p
         initial="hidden"
@@ -55,13 +70,7 @@ const About = () => {
         viewport={{ once: true, amount: 0.3 }}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        Hi, my name is Pavel, and I'm a front-end developer with experience in
-        JavaScript and some experience with TypeScript. My main tool is React,
-        and I'm constantly improving my skills to build high-quality, modern web
-        applications. I'm a fast learner and committed to becoming a
-        professional in front-end development. My portfolio showcases projects
-        that reflect my abilities and approach to development. I’d be excited to
-        join your project and contribute to its success!
+        {t("about.aboutDescription")}
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

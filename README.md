@@ -1,6 +1,6 @@
 # 3D Portfolio
 
-![3d-portfolio-preview](./src/assets/3d-portfolio-preview.png)
+![3d-portfolio-preview](./src/assets/3d-portfolio-preview-EN.png)
 
 ## Tech Stack
 

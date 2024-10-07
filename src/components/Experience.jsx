@@ -5,24 +5,25 @@ import {
 import { motion } from "framer-motion";
 import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../styles";
-import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import React from "react";
 import { textSlideUp } from "../utils/motion";
+import { questionMark } from "../assets";
+import { useTranslation } from "react-i18next";
 
 const ExperienceCard = ({ experience }) => {
   const currentDate = new Date();
 
-  const today = currentDate.toLocaleString('en-US', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
+  const today = currentDate.toLocaleString("en-US", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
   });
 
-  const todayRu = currentDate.toLocaleString('ru-RU', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
+  const todayRu = currentDate.toLocaleString("ru-RU", {
+    day: "numeric",
+    month: "long",
+    year: "numeric",
   });
 
   return (
@@ -67,6 +68,24 @@ const ExperienceCard = ({ experience }) => {
 };
 
 const Experience = () => {
+  const { t } = useTranslation();
+
+  const experiences = [
+    {
+      title: t("experience.specialization"),
+      company_name: "Mauris eu interdum libero",
+      icon: questionMark,
+      iconBg: "#101c30",
+      date: "",
+      points: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum cursus libero sit amet nisl accumsan sodales. Phasellus sed nunc in turpis interdum tincidunt.",
+        "Nulla varius leo et ipsum fringilla, non sodales tellus lacinia.",
+        "Praesent pulvinar at tellus sed ultricies.",
+        "Donec mollis sit amet lectus vitae tristique. Quisque lobortis ipsum in justo scelerisque, nec accumsan lacus aliquet. Mauris vitae odio a enim tincidunt hendrerit nec quis felis.",
+      ],
+    },
+  ];
+
   return (
     <>
       <motion.div
@@ -75,8 +94,8 @@ const Experience = () => {
         variants={textSlideUp(100, 0.4, 0)}
         viewport={{ once: true, amount: 0.3 }}
       >
-        <p className={styles.sectionSubText}>What I have done so far</p>
-        <h2 className={styles.sectionHeadText}>Work Experienece</h2>
+        <p className={styles.sectionSubText}>{t("experience.experienceTitle")}</p>
+        <h2 className={styles.sectionHeadText}>{t('experience.experienceSubtitle')}</h2>
       </motion.div>
 
       <div className="mt-20 flex flex-col">

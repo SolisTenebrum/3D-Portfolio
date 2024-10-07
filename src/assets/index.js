@@ -18,11 +18,13 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import vrnas from './vrnas.png'
-import workInProgress from './work-in-progress.png';
 import openProject from './open-in-new-tab.svg'
 import questionMark from './question-mark.svg'
-import portfolioImage from './3d-portfolio-preview.png'
+import vrnas from './vrnas.png'
+import workInProgressRU from './wip-RU.png';
+import workInProgressEN from './wip-EN.png';
+import portfolioImageEN from './3d-portfolio-preview-EN.png'
+import portfolioImageRU from './3d-portfolio-preview-RU.png'
 
 export {
   logo,
@@ -44,8 +46,10 @@ export {
   typescript,
   threejs,
   vrnas,
-  workInProgress,
   openProject,
   questionMark,
-  portfolioImage
+  workInProgressRU,
+  workInProgressEN,
+  portfolioImageRU,
+  portfolioImageEN
 };

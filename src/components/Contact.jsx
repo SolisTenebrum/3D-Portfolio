@@ -4,8 +4,11 @@ import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const {t} = useTranslation()
+
   const formRef = useRef();
 
   const [form, setForm] = useState({
@@ -72,43 +75,43 @@ const Contact = () => {
         viewport={{ once: true, amount: 0.1 }}
         className="flex-[0.75] bg-tertiary p-8 rounded-2xl select-none"
       >
-        <p className={styles.heroSubText}>Get in touch</p>
-        <h3 className={styles.heroHeadText}>Contact</h3>
+        <p className={`${styles.contactSubText}`}>{t("contacts.contactsTitle")}</p>
+        <h3 className={`${styles.contactHeadText}`}>{t("contacts.contactsSubtitle")}</h3>
         <form
           ref={formRef}
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your name</span>
+            <span className="text-white font-medium mb-4">{t("contacts.labelInputName")}</span>
             <input
               type="text"
               name="name"
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your name?"
+              placeholder={t("contacts.inputPlaceholderName")}
               className="bg-primary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Email</span>
+            <span className="text-white font-medium mb-4">{t("contacts.labelInputEmail")}</span>
             <input
               type="email"
               name="email"
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your email?"
+              placeholder={t("contacts.inputPlaceholderEmail")}
               className="bg-primary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your message</span>
+            <span className="text-white font-medium mb-4">{t("contacts.labelInputMessage")}</span>
             <textarea
               rows="7"
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="What do you want to say?"
+              placeholder={t("contacts.inputPlaceholderMessage")}
               className="bg-primary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium resize-none"
             />
           </label>
